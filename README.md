@@ -16,6 +16,16 @@ The validation confirmed that a Python MCP client can authenticate with Databric
 
 AI Client / Agent -> MCP -> Genie One MCP -> Databricks Genie -> Unity Catalog -> governed data
 
+### Hands-on evidence
+
+The following screenshots capture the validated Genie experience and MCP client flow.
+
+![Genie revenue by region](Screenshot/genie-revenue-by-region.png)
+
+![Genie Agent configuration](Screenshot/genie-agent-configuration.png)
+
+![Python MCP client validation](Screenshot/mcp-client-validation.png)
+
 ## What this project covers
 
 - What Model Context Protocol (MCP) is
@@ -107,6 +117,10 @@ The demo uses a small controlled dataset so the expected analytical results can 
 
 ```text
 databricks-genie-mcp-lab/
+├── Screenshot/
+│   ├── genie-agent-configuration.png
+│   ├── genie-revenue-by-region.png
+│   └── mcp-client-validation.png
 ├── architecture/
 │   └── genie-mcp-architecture.svg
 ├── docs/

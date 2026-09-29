@@ -1,8 +1,8 @@
 # Genie One MCP
 
-Databricks introduced Genie One MCP as a way for MCP clients and agents to interact with Databricks Genie.
+Databricks provides Genie One MCP as a Databricks-provided MCP Service that exposes Genie as a conversational analytics tool over the Model Context Protocol.
 
-According to the September 2026 Databricks release notes, Genie One MCP Server reached General Availability on September 25, 2026.
+The current GA service is `system.ai.genie_one_mcp`, available through Unity Gateway. The previous Beta endpoint `/api/2.0/mcp/genie` is deprecated and is scheduled to sunset on October 31, 2026.
 
 ## Why it is interesting
 
@@ -23,8 +23,8 @@ Genie
   v
 Governed Databricks data
 
-## What this project does not claim
+## Hands-on validation
 
-This repository is initially an architecture and learning project. It does not claim that the author has deployed a production Genie One MCP integration.
+This repository now includes a Python MCP validation client under `client/`. The client uses the local Databricks CLI OAuth profile, calls `genie_ask`, polls with `genie_poll_response`, and prints the completed analytical answer.
 
-Hands-on implementation results will be added only after they are actually tested.
+The repository's validation used the current `system.ai.genie_one_mcp` service. `genie_get_query_result` was separately investigated but is documented as not validated for the tested SDK response because the completed response exposed no usable `query_items` value.

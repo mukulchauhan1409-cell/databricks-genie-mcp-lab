@@ -1,3 +1,9 @@
+-- Load the controlled demo dataset.
+-- This script is intentionally rerunnable for a clean validation state.
+
+DELETE FROM genie_mcp_demo.analytics.orders;
+DELETE FROM genie_mcp_demo.analytics.customers;
+
 INSERT INTO genie_mcp_demo.analytics.customers VALUES
   (101, 'Customer A', 'North'),
   (102, 'Customer B', 'South'),

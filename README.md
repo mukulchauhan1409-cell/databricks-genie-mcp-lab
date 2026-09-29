@@ -58,13 +58,44 @@ databricks-genie-mcp-lab/
 
 ## Validation plan
 
-1. Create the demo catalog, schema, and Delta tables in a Databricks workspace.
-2. Run the preparation notebook and verify the expected sample data.
-3. Configure a Genie space using the demo tables and relevant business context.
-4. Validate the business questions listed above directly in Genie.
-5. Validate the Genie + MCP request path using a supported MCP client.
-6. Capture observed behavior, limitations, and screenshots/results in the repository.
-7. Only then change the project status from architecture exploration to hands-on validated.
+## Hands-on Validation
+
+Status: COMPLETE
+
+The Genie One MCP integration has been successfully validated end-to-end using a Python MCP client.
+
+### Validation Flow
+
+Python MCP Client
+-> Databricks OAuth
+-> system.ai.genie_one_mcp
+-> Genie One
+-> Genie MCP Revenue Analytics
+-> Unity Catalog
+-> genie_poll_response
+-> Completed Business Answer
+
+### Validated Questions
+
+1. Which customer generated the most revenue?
+   - Result: Customer B
+   - Revenue: $10,300
+
+2. What are the top 3 orders by amount?
+   - Order 1002: $7,500
+   - Order 1001: $5,000
+   - Order 1004: $4,200
+
+3. What is the total revenue by region?
+   - South: $10,300
+   - North: $8,000
+   - West: $4,200
+   - Total: $22,500
+
+All three MCP requests completed successfully.
+
+Detailed validation results:
+[Hands-on Validation](docs/05-hands-on-validation.md)
 
 ## Key learning
 

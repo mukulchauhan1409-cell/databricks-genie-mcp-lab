@@ -6,28 +6,13 @@ A hands-on learning and architecture exploration project for understanding how D
 
 Status: Learning and architecture exploration
 
-This repository documents concepts, official product capabilities, sample data, and practical examples. It does not claim a production implementation of Genie One MCP unless explicitly marked as tested.
+The repository currently contains the architecture, documentation, reproducible demo dataset, SQL setup, and Databricks preparation notebook. The actual Genie + MCP runtime path remains a validation step and will only be marked as tested after a hands-on run.
 
 ## Architecture
 
-AI Client / Agent
-        |
-        v
-       MCP
-        |
-        v
-Genie One MCP Service
-        |
-        v
-Databricks Genie
-        |
-        +---- Business context / semantic understanding
-        |
-        v
-Unity Catalog
-        |
-        v
-Enterprise Data
+![Databricks Genie + MCP architecture](architecture/genie-mcp-architecture.svg)
+
+AI Client / Agent -> MCP -> Genie One MCP -> Databricks Genie -> governed data through Unity Catalog
 
 ## What this project covers
 
@@ -37,6 +22,7 @@ Enterprise Data
 - How Unity Catalog governance fits into the request path
 - Sample analytical questions and data
 - Reproducible Databricks SQL setup for the demo dataset
+- A Databricks preparation notebook
 - Lessons learned and implementation considerations
 
 ## Repository structure
@@ -44,7 +30,7 @@ Enterprise Data
 ```text
 databricks-genie-mcp-lab/
 ├── architecture/
-│   └── genie-mcp-architecture.png
+│   └── genie-mcp-architecture.svg
 ├── docs/
 │   ├── 01-what-is-mcp.md
 │   ├── 02-genie-one-mcp.md
@@ -69,6 +55,16 @@ databricks-genie-mcp-lab/
 - Which customers generated the most revenue?
 - What were the top five orders this month?
 - How did revenue change over time?
+
+## Validation plan
+
+1. Create the demo catalog, schema, and Delta tables in a Databricks workspace.
+2. Run the preparation notebook and verify the expected sample data.
+3. Configure a Genie space using the demo tables and relevant business context.
+4. Validate the business questions listed above directly in Genie.
+5. Validate the Genie + MCP request path using a supported MCP client.
+6. Capture observed behavior, limitations, and screenshots/results in the repository.
+7. Only then change the project status from architecture exploration to hands-on validated.
 
 ## Key learning
 

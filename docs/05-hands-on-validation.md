@@ -122,7 +122,7 @@ Completed Response
         |
         v
 Python MCP Client
-
+```
 
 ## Validation Results
 
@@ -202,7 +202,17 @@ Screenshots captured during the hands-on validation include:
 2. Genie Agent configuration for `Genie MCP Revenue Analytics`.
 3. Python MCP client showing `genie_ask`, polling, and completed response.
 
-Screenshots can be added under `screenshots/` when publishing the repository.
+### Genie analytical result
+
+![Genie analytical result showing total revenue by region](../Screenshot/genie-revenue-by-region.png)
+
+### Genie Agent configuration
+
+![Genie Agent configuration](../Screenshot/genie-agent-configuration.png)
+
+### Python MCP client validation
+
+![Python MCP client validation](../Screenshot/mcp-client-validation.png)
 
 ## Limitations
 

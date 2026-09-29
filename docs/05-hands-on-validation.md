@@ -122,3 +122,92 @@ Completed Response
         |
         v
 Python MCP Client
+
+
+## Validation Results
+
+### Test 1: Customer revenue
+
+Question:
+
+Which customer generated the most revenue?
+
+Result:
+
+- Customer B
+- Revenue: $10,300
+- Status: PASS
+
+### Test 2: Top 3 orders
+
+Question:
+
+What are the top 3 orders by amount?
+
+Result:
+
+| Order | Amount |
+| --- | ---: |
+| 1002 | $7,500 |
+| 1001 | $5,000 |
+| 1004 | $4,200 |
+
+Status: PASS
+
+### Test 3: Revenue by region
+
+Question:
+
+What is the total revenue by region?
+
+Result:
+
+| Region | Total revenue |
+| --- | ---: |
+| South | $10,300 |
+| North | $8,000 |
+| West | $4,200 |
+| Total | $22,500 |
+
+Status: PASS
+
+## Validation Summary
+
+| Capability | Result |
+| --- | --- |
+| MCP session initialization | PASS |
+| MCP tool discovery | PASS |
+| genie_ask | PASS |
+| genie_poll_response | PASS |
+| Customer revenue analysis | PASS |
+| Top-N order analysis | PASS |
+| Revenue by region | PASS |
+| Unity Catalog data access | PASS |
+| End-to-end Genie One MCP flow | PASS |
+| genie_get_query_result full-result retrieval | Not validated |
+
+## genie_get_query_result Note
+
+The completed MCP response returned the rendered analytical answer and Databricks deep links successfully.
+
+During the Python MCP SDK test, the completed response exposed `query_items` as null. Because `genie_get_query_result` requires the query's `item_id`, the full-result retrieval path was not marked as successfully validated.
+
+This is documented as a validation limitation rather than a failure of the core Genie One MCP request flow.
+
+## Evidence
+
+Screenshots captured during the hands-on validation include:
+
+1. Genie analytical result showing total revenue by region.
+2. Genie Agent configuration for `Genie MCP Revenue Analytics`.
+3. Python MCP client showing `genie_ask`, polling, and completed response.
+
+Screenshots can be added under `screenshots/` when publishing the repository.
+
+## Limitations
+
+- Validation was performed against a small controlled dataset.
+- The validation demonstrates functional behavior, not production-scale performance.
+- Only a limited set of analytical question types was tested.
+- `genie_get_query_result` was not marked as validated because the Python MCP SDK response exposed `query_items` as null for the completed response used in testing.
+- Production deployments should be validated against the current Databricks documentation and workspace governance configuration.

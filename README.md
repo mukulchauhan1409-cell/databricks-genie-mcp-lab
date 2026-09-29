@@ -26,6 +26,20 @@ The following screenshots capture the validated Genie experience and MCP client 
 
 ![Python MCP client validation](Screenshot/mcp-client-validation.png)
 
+## Why this project matters
+
+This lab demonstrates a complete path from a natural-language business question to governed analytics through MCP, Genie, and Unity Catalog. The focus is not only on connectivity, but on validating the behavior with a controlled dataset and documenting the evidence.
+
+## Quick start
+
+1. Create the demo catalog, schema, tables, and sample data using the SQL files in `sql/`.
+2. Run `notebooks/01-genie-data-preparation.py` in Databricks to prepare the Genie data context.
+3. Configure a Genie space using the business context documented in `docs/05-hands-on-validation.md`.
+4. Configure the Databricks Genie One MCP service and authenticate with OAuth.
+5. Run the Python MCP validation flow and compare the returned results with the expected values documented in the validation guide.
+
+For the exact validated environment and results, see [Hands-on Validation](docs/05-hands-on-validation.md).
+
 ## What this project covers
 
 - What Model Context Protocol (MCP) is
@@ -166,6 +180,10 @@ Three concerns work together:
 - Databricks Genie One: https://docs.databricks.com/aws/en/genie-one
 - Unity Catalog: https://docs.databricks.com/aws/en/data-governance/unity-catalog/
 - Databricks MCP documentation: https://docs.databricks.com/aws/en/generative-ai/mcp/
+
+## Project contribution
+
+This repository is intended for technical learning, reproducible experimentation, and community knowledge sharing. Contributions that improve clarity, reproducibility, validation coverage, or documentation are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Notes
 

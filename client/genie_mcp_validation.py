@@ -13,7 +13,7 @@ import json
 import subprocess
 from typing import Any
 
-import httpx
+import httpx2
 from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
 
@@ -36,8 +36,8 @@ async def ask_genie(question: str) -> dict[str, Any]:
     token = get_access_token()
     headers = {"Authorization": f"Bearer {token}"}
 
-    timeout = httpx.Timeout(30.0, read=300.0)
-    async with httpx.AsyncClient(headers=headers, timeout=timeout) as http_client:
+    timeout = httpx2.Timeout(30.0, read=300.0)
+    async with httpx2.AsyncClient(headers=headers, timeout=timeout) as http_client:
         async with streamable_http_client(MCP_URL, http_client=http_client) as (
             read_stream,
             write_stream,

@@ -36,7 +36,9 @@ This lab demonstrates a complete path from a natural-language business question 
 2. Run `notebooks/01-genie-data-preparation.py` in Databricks to prepare the Genie data context.
 3. Configure a Genie space using the business context documented in `docs/05-hands-on-validation.md`.
 4. Configure the Databricks Genie One MCP service and authenticate with OAuth.
-5. Run the Python MCP validation flow and compare the returned results with the expected values documented in the validation guide.
+5. Install the Python dependencies from `requirements.txt`.
+6. Set the workspace hostname in `client/genie_mcp_validation.py` and run the validation client.
+7. Compare the returned results with `validation/expected-results.sql` and the validation guide.
 
 For the exact validated environment and results, see [Hands-on Validation](docs/05-hands-on-validation.md).
 
@@ -146,6 +148,10 @@ databricks-genie-mcp-lab/
 ├── examples/
 │   ├── sample-business-questions.md
 │   └── sample-mcp-flow.md
+├── client/
+│   └── genie_mcp_validation.py
+├── validation/
+│   └── expected-results.sql
 ├── notebooks/
 │   └── 01-genie-data-preparation.py
 ├── sql/
